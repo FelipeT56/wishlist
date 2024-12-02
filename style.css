@@ -38,7 +38,9 @@ header h1 {
 }
 
 .item img {
-  width: 100%;
+  width: 100%; /* Ensures all images scale to fill their container */
+  height: 200px; /* Sets a consistent height */
+  object-fit: cover; /* Crops the image to fit perfectly */
   border-radius: 8px;
 }
 
@@ -61,8 +63,27 @@ header h1 {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  text-align: center;
 }
 
 .btn:hover {
   background-color: #b71c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .wishlist {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center the items */
+    padding: 10px;
+  }
+
+  .item {
+    width: 90%; /* Reduce width for better fit on smaller screens */
+    margin: 10px 0;
+  }
+
+  .item img {
+    height: 150px; /* Adjust image height for smaller screens */
+  }
 }
